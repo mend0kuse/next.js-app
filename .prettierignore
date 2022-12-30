@@ -1,0 +1,8 @@
+node_modules
+Dockerfile
+*.scss
+.next
+.husky
+package-lock.json
+package.json
+README.md
