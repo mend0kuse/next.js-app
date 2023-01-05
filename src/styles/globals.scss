@@ -1,16 +1,19 @@
-@import "./reset.scss";
+@import "./reset";
 
 body {
 	color: var(--black);
-	font-family: "Noto Sans", sans-serif;
 	background: #F5F6F8;
+
+	font-family: "Noto Sans", sans-serif;
 }
 
 :root {
-	--black: #3b434e;
+	--black: #3B434E;
+	--gray-light: #EBEBEB;
 	--white: white;
-	--primary: #7653fc;
-	--red: #fc836d;
-	--green: #1dc37e;
-	--green-light: #c8f8e4;
+	--primary: #7653FC;
+	--primary-hover: #5E3AEE;
+	--red: #FC836D;
+	--green: #1DC37E;
+	--green-light: #C8F8E4;
 }

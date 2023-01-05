@@ -1,0 +1,11 @@
+.arrow {
+	display: inline-block;
+
+	margin-left: 10px;
+
+	transition: 0.2s linear all;
+}
+
+.down {
+	transform: rotate(90deg);
+}

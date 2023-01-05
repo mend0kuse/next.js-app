@@ -1,0 +1,38 @@
+.btn {
+	padding: 10px;
+
+	transition: 0.2s linear all;
+	text-align: center;
+
+	border-radius: 5px;
+
+	font-size: 14px;
+}
+
+.primary {
+	color: white;
+	background-color: var(--primary);
+
+	&:hover {
+		background-color: var(--primary-hover);
+	}
+}
+
+.ghost {
+	color: var(--black);
+	border: 1px solid var(--gray-light);
+	background: none;
+
+	svg {
+		transition: 0.2s linear all;
+	}
+
+	&:hover {
+		color: var(--white);
+		background-color: var(--primary);
+
+		svg {
+			fill: white;
+		}
+	}
+}
