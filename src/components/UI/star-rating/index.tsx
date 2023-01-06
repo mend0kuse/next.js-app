@@ -1,7 +1,9 @@
-import React, { FC, useEffect, useState, KeyboardEvent, useMemo } from 'react';
+import cn from 'classnames';
+
+import React, { FC, KeyboardEvent, useEffect, useMemo, useState } from 'react';
+
 import Star from '../star';
 import styles from './star-rating.module.scss';
-import cn from 'classnames';
 
 interface StarRatingProps {
 	rating: number;
@@ -10,7 +12,6 @@ interface StarRatingProps {
 
 const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
 	const ratingArray = useMemo(() => new Array(5).fill(<></>), []);
-
 	const [hoverStar, setHoverStar] = useState(rating);
 
 	const onClickHandler = (rating: number) => {
@@ -18,9 +19,7 @@ const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
 	};
 
 	const handleSpace = (e: KeyboardEvent<HTMLSpanElement>, rating: number) => {
-		if (setRating && e.code == 'Space') {
-			setRating(rating);
-		}
+		if (setRating && e.code == 'Space') setRating(rating);
 	};
 
 	useEffect(() => {
@@ -28,13 +27,10 @@ const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
 	}, [rating]);
 
 	return (
-		<div
-			className={styles.wrapper}
-			onMouseLeave={() => setHoverStar(rating)}
-		>
+		<div className={styles.wrapper} onMouseLeave={() => setHoverStar(rating)}>
 			{ratingArray.map((item: JSX.Element, index: number) => {
 				return (
-					<span
+					<button
 						key={index}
 						className={cn({ [styles.pointer]: setRating })}
 						onMouseEnter={() => setHoverStar(index + 1)}
@@ -43,7 +39,7 @@ const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
 						onKeyDown={(e: KeyboardEvent<HTMLSpanElement>) => handleSpace(e, index + 1)}
 					>
 						<Star fill={index < hoverStar} />
-					</span >
+					</button>
 				);
 			})}
 		</div>
