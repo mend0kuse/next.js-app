@@ -1,3 +1,5 @@
+import { AppContextProvider, IAppContext } from 'src/context';
+
 import React, { FC } from 'react';
 
 import Footer from './footer';
@@ -20,12 +22,14 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 	);
 };
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FC<T>) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FC<T>) => {
 	return function withLayoutComponent(props: T) {
 		return (
-			<Layout>
-				<Component {...props} />
-			</Layout>
+			<AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+				<Layout>
+					<Component {...props} />
+				</Layout>
+			</AppContextProvider>
 		);
 	};
 };
