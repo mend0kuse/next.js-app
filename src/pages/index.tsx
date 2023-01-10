@@ -27,11 +27,6 @@ export const Home: FC<HomeProps> = ({ menu }) => {
 			<P size='xl'>Lorem ipsum dolor sit, amet consectetur adipisicing.</P>
 			<Tag color='primary'>ФЫВфЫВ</Tag>
 			<StarRating rating={rat} setRating={setRat} />
-			<ul>
-				{menu.map((item) => {
-					return <li key={item._id.secondCategory}>{item._id.secondCategory}</li>;
-				})}
-			</ul>
 		</>
 	);
 };

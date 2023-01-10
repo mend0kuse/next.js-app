@@ -1,0 +1,64 @@
+.wrapper {
+}
+
+.firstLvl {
+	display: flex;
+	color: inherit;
+	align-items: center;
+	gap: 20px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 25px;
+	transition: 0.2s linear all;
+	svg {
+		transition: 0.2s linear all;
+	}
+}
+
+.firstLvlActive,
+.firstLvl:hover {
+	color: var(--primary);
+	svg {
+		fill: var(--primary);
+	}
+}
+
+.secondLvl-wrapper,
+.secondLvlBlock {
+	display: flex;
+	row-gap: 10px;
+	flex-direction: column;
+}
+.secondLvlBlock {
+	margin: 10px 0 0 0;
+	display: none;
+}
+.secondLvlBlockOPened {
+	margin-bottom: 20px;
+	display: block;
+}
+.secondLvlWrapper {
+	padding: 10px 0px 10px 32px;
+	border-left: 1px solid #dfdfdf;
+	margin: 15px 0 15px 11px;
+}
+.secondLvl {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	text-transform: uppercase;
+	color: #787d85;
+}
+
+.thirdLvl {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	display: block;
+	color: #787d85;
+}
+
+.thirdLvlActive,
+.thirdLvl:hover {
+	color: var(--primary);
+}
