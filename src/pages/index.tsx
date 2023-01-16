@@ -18,6 +18,8 @@ interface HomeProps extends Record<string, unknown> {
 
 export const Home: FC<HomeProps> = ({ menu }) => {
 	const [rat, setRat] = useState(3);
+	const [str, setStr] = useState('asd');
+
 	return (
 		<>
 			<H tag='h1'>Текст</H>
@@ -27,6 +29,7 @@ export const Home: FC<HomeProps> = ({ menu }) => {
 			<P size='xl'>Lorem ipsum dolor sit, amet consectetur adipisicing.</P>
 			<Tag color='primary'>ФЫВфЫВ</Tag>
 			<StarRating rating={rat} setRating={setRat} />
+			<p>{str}</p>
 		</>
 	);
 };

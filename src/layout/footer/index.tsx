@@ -7,7 +7,7 @@ import P from '@components/UI/PTag';
 
 import styles from './footer.module.scss';
 
-interface FooterProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
+interface FooterProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
 const Footer: FC<FooterProps> = ({ className, ...props }) => {
 	return (

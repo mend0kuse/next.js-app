@@ -2,7 +2,7 @@ import cn from 'classnames';
 
 import React, { FC, KeyboardEvent, useEffect, useMemo, useState } from 'react';
 
-import Star from '../star';
+import Star from '../../../icons/star';
 import styles from './star-rating.module.scss';
 
 interface StarRatingProps {

@@ -1,15 +1,16 @@
-.wrapper {
-}
-
 .firstLvl {
 	display: flex;
-	color: inherit;
 	align-items: center;
-	gap: 20px;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 25px;
+
 	transition: 0.2s linear all;
+
+	color: inherit;
+
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 25px;
+	gap: 20px;
+
 	svg {
 		transition: 0.2s linear all;
 	}
@@ -18,6 +19,7 @@
 .firstLvlActive,
 .firstLvl:hover {
 	color: var(--primary);
+
 	svg {
 		fill: var(--primary);
 	}
@@ -27,35 +29,47 @@
 .secondLvlBlock {
 	display: flex;
 	row-gap: 10px;
+
 	flex-direction: column;
 }
+
 .secondLvlBlock {
-	margin: 10px 0 0 0;
 	display: none;
+
+	margin: 10px 0 0;
 }
+
 .secondLvlBlockOPened {
-	margin-bottom: 20px;
 	display: block;
+
+	margin-bottom: 20px;
 }
+
 .secondLvlWrapper {
-	padding: 10px 0px 10px 32px;
-	border-left: 1px solid #dfdfdf;
 	margin: 15px 0 15px 11px;
+	padding: 10px 0 10px 32px;
+
+	border-left: 1px solid #DFDFDF;
 }
+
 .secondLvl {
-	font-weight: 300;
-	font-size: 12px;
-	line-height: 16px;
 	text-transform: uppercase;
-	color: #787d85;
+
+	color: #787D85;
+
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 16px;
 }
 
 .thirdLvl {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 19px;
 	display: block;
-	color: #787d85;
+
+	color: #787D85;
+
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 19px;
 }
 
 .thirdLvlActive,

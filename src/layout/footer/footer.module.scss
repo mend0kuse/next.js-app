@@ -1,13 +1,17 @@
-@import "../../styles/breakpoints.scss";
+@import "../../styles/breakpoints";
+
 .footer {
-	background-color: var(--primary);
-	color: var(--white);
 	padding: 25px 30px;
+
+	color: var(--white);
+	background-color: var(--primary);
 }
+
 .container {
 	display: grid;
 	grid-template-columns: 1fr auto auto;
 	gap: 10px 40px;
+
 	@include mobile {
 		grid-template-columns: 1fr;
 	}

@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo } from 'react';
 
 import Arrow from '@components/UI/arrow';
 
@@ -12,7 +12,7 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 	arrow?: 'right' | 'down' | 'none';
 }
 
-const Button: FC<ButtonProps> = ({ arrow = 'none', appearance, children, className, ...props }) => {
+const Button: FC<ButtonProps> = memo(({ arrow = 'none', appearance, children, className, ...props }) => {
 	return (
 		<button
 			className={cn(styles.btn, className, {
@@ -25,6 +25,7 @@ const Button: FC<ButtonProps> = ({ arrow = 'none', appearance, children, classNa
 			{arrow != 'none' && <Arrow down={arrow == 'down'} />}
 		</button>
 	);
-};
+});
 
+Button.displayName = 'Button';
 export default Button;

@@ -9,7 +9,7 @@ import React, { DetailedHTMLProps, FC, HTMLAttributes, useContext } from 'react'
 
 import styles from './menu.module.scss';
 
-interface MenuProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
+interface MenuProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
 const Menu: FC<MenuProps> = () => {
 	const { menu, setMenu, firstCategory } = useContext(AppContext);
