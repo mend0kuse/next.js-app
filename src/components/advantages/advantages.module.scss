@@ -1,0 +1,39 @@
+.wrapper {
+	display: grid;
+	gap: 30px;
+	color: #3b434e;
+}
+.name {
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 30px;
+}
+.title {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
+	grid-area: title;
+}
+.line {
+	grid-area: line;
+	width: 1px;
+	height: 100%;
+	background: #d2d2d2;
+	display: block;
+	justify-self: center;
+}
+.text {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 29px;
+	grid-area: text;
+}
+.adv {
+	display: grid;
+	align-items: center;
+	gap: 10px 40px;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		"ico title"
+		"line text";
+}

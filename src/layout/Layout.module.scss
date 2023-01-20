@@ -5,7 +5,7 @@
 
 	min-height: 100vh;
 
-	gap: 0 30px;
+	gap: 40px 30px;
 	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
 	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
@@ -26,6 +26,9 @@
 
 .body {
 	grid-area: body;
+	@include mobile {
+		padding: 0 15px;
+	}
 }
 
 .footer {

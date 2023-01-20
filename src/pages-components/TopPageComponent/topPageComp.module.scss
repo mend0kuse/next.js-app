@@ -1,10 +1,19 @@
-.container {
-	padding-top: 40px;
-}
+
 .header {
 	display: grid;
 	grid-template-columns: auto 1fr auto;
 	align-items: baseline;
 	justify-items: left;
 	gap: 20px;
+}
+.suptitle {
+	margin-bottom: 20px;
+}
+.tags{
+	display: flex;
+	row-gap: 5px;
+	flex-wrap: wrap;
+}
+.advantages {
+	margin-bottom: 30px;
 }
