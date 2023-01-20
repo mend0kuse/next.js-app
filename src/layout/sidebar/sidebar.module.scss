@@ -1,7 +1,11 @@
+@import "../../styles/breakpoints.scss";
 .sidebar {
 	display: grid;
 	align-content: flex-start;
 
 	padding-top: 34px;
 	gap: 20px;
+	@include mobile {
+		display: none;
+	}
 }

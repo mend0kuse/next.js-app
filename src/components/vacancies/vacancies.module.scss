@@ -1,0 +1,73 @@
+@import "../../styles/breakpoints.scss";
+
+.title {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	justify-items: left;
+	column-gap: 20px;
+	align-items: baseline;
+}
+.inner {
+	margin: 20px 0 40px;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 30px;
+	@include _1220 {
+		grid-template-columns: 1fr;
+	}
+}
+
+.count {
+	padding: 20px;
+	text-align: center;
+}
+.all {
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 27px;
+	color: #3b434e;
+}
+
+.total {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 49px;
+	margin-top: 10px;
+	color: #7653fc;
+}
+
+.salaries {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+}
+.grade {
+	padding: 20px;
+	border-radius: 0;
+	@include tablet {
+		&:not(:last-child) {
+			border-bottom: 1px solid #ebebeb;
+		}
+	}
+	&:first-child {
+		border-radius: 5px 0 0 5px;
+	}
+	&:last-child {
+		border-radius: 0 5px 5px 0;
+	}
+}
+.salary {
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 35px;
+	margin: 10px 0;
+	color: #3b434e;
+}
+.stars {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
