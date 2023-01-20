@@ -1,16 +1,16 @@
 import cn from 'classnames';
 
-import React, { FC, KeyboardEvent, useEffect, useMemo, useState } from 'react';
+import React, { DetailedHTMLProps, FC, HTMLAttributes, KeyboardEvent, useEffect, useMemo, useState } from 'react';
 
 import Star from '../../../icons/star';
 import styles from './star-rating.module.scss';
 
-interface StarRatingProps {
+interface StarRatingProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	rating: number;
 	setRating?: (rating: number) => void;
 }
 
-const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
+const StarRating: FC<StarRatingProps> = ({ rating, setRating, className }) => {
 	const ratingArray = useMemo(() => new Array(5).fill(<></>), []);
 	const [hoverStar, setHoverStar] = useState(rating);
 
@@ -27,7 +27,7 @@ const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
 	}, [rating]);
 
 	return (
-		<div className={styles.wrapper} onMouseLeave={() => setHoverStar(rating)}>
+		<div className={cn(styles.wrapper, className)} onMouseLeave={() => setHoverStar(rating)}>
 			{ratingArray.map((item: JSX.Element, index: number) => {
 				return (
 					<button
