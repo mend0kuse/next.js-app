@@ -21,6 +21,7 @@ interface TopPageComponentProps extends DetailedHTMLProps<HTMLAttributes<HTMLDiv
 }
 
 const TopPageComponent: FC<TopPageComponentProps> = ({ firstCategory, page, products }) => {
+
 	const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(SortReducer, {
 		sort: SortEnum.Rating,
 		products,

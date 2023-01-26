@@ -1,16 +1,21 @@
+@import "../../styles/breakpoints.scss";
+
 .wrapper {
 	display: grid;
-	align-items: end;
 	grid-template-columns:
 		[start] 70px [logoend] 30px [titlestar] calc(50% - 100px) [middle] 1fr [pricestart]
 		auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestar] auto [end];
 	margin-bottom: 20px;
 	padding: 30px;
+	color: #3b434e;
 }
 
 .logo {
 	grid-column: start/logoend;
 	grid-row: 1 / span 2;
+	img {
+		border-radius: 5px;
+	}
 }
 .title,
 .tags {
@@ -30,6 +35,10 @@
 }
 .desc {
 	grid-column: start/end;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 15px;
 }
 .hr {
 	grid-column: start / end;
@@ -39,15 +48,238 @@
 }
 .feature {
 	grid-column: start/middle;
+	padding-right: 60px;
 }
 .advBlock {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
 	grid-column: middle/end;
-
+	display: flex;
+	flex-direction: column;
+	row-gap: 25px;
 }
 .adv {
+	border-left-color: #1dc47e;
 }
 .disAdv {
+	border-left-color: #fc836d;
+}
+.disAdv,
+.adv {
+	padding-left: 20px;
+	border-left-width: 3px;
+	border-left-style: solid;
 }
 .actions {
 	grid-column: start/end;
+	display: flex;
+	gap: 20px;
+}
+.title {
+	align-self: flex-end;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 27px;
+}
+.price,
+.credit {
+	align-self: flex-end;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 27px;
+}
+.priceTitle,
+.creditTitle,
+.reviewCount {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 19px;
+}
+.rating {
+	align-self: flex-end;
+}
+.month {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+}
+.price {
+	display: flex;
+	column-gap: 5px;
+	align-items: center;
+}
+.tags {
+	margin-top: 5px;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.advBlockTitle {
+	margin-bottom: 5px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 22px;
+}
+.charact {
+	display: grid;
+	font-size: 16px;
+	align-items: baseline;
+	grid-template-columns: auto 1fr auto;
+}
+.charactName {
+	font-weight: 700;
+	line-height: 32px;
+}
+.charactDots {
+	margin: 0px 10px;
+	border-bottom: 1px dashed #c4c4c4;
+}
+.charactValue {
+	font-weight: 500;
+	line-height: 22px;
+}
+
+@include _1320 {
+	.wrapper {
+		grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+		grid-template-areas:
+			"logo . title title title title title"
+			"logo . tags tags tags tags tags"
+			"price price price . credit . rating"
+			"priceTitle priceTitle priceTitle . creditTitle . reviewCount"
+			"hr hr hr hr hr hr hr"
+			"desc desc desc desc desc desc desc"
+			"feature feature feature feature feature feature feature"
+			"advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
+			"hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+			"actions actions actions actions actions actions actions";
+	}
+	.logo {
+		margin-bottom: 20px;
+		grid-area: logo;
+	}
+	.title {
+		grid-area: title;
+	}
+	.tags {
+		grid-area: tags;
+
+	}
+	.price {
+		grid-area: price;
+	}
+	.credit {
+		grid-area: credit;
+	}
+	.rating {
+		grid-area: rating;
+	}
+	.priceTitle {
+		grid-area: priceTitle;
+	}
+	.creditTitle {
+		grid-area: creditTitle;
+	}
+
+	.reviewCount {
+		grid-area: reviewCount;
+	}
+
+	.hr {
+		grid-area: hr;
+	}
+
+	.desc {
+		grid-area: desc;
+	}
+
+	.feature {
+		grid-area: feature;
+	}
+
+	.advBlock {
+		grid-area: advBlock;
+	}
+
+	.hr2 {
+		grid-area: hr2;
+	}
+
+	.actions {
+		grid-area: actions;
+	}
+}
+@include _900 {
+	.wrapper {
+		grid-template-columns: 70px 30px 1fr;
+		grid-template-areas:
+			"logo . title"
+			"logo . tags"
+			"priceTitle priceTitle price"
+			"creditTitle creditTitle credit"
+			"reviewCount reviewCount rating"
+			"hr hr hr"
+			"desc desc desc"
+			"feature feature feature"
+			"advBlock advBlock advBlock"
+			"hr2 hr2 hr2"
+			"actions actions actions";
+	}
+	.tags{
+		margin-bottom: 20px;
+	}
+	.advBlock{
+		margin-top: 20px;
+	}
+	.priceTitle{
+		margin-top: 5px;
+	}
+	.creditTitle{
+		margin-top: 5px;
+	}
+	.reviewCount	{
+		margin-top: 5px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"logo"
+			"title"
+			"tags"
+			"price"
+			"priceTitle"
+			"credit"
+			"creditTitle"
+			"rating"
+			"reviewCount"
+			"hr"
+			"desc"
+			"feature"
+			"advBlock"
+			"hr2"
+			"actions";
+	}
+	.price{
+		margin-top: 5px;
+	}
+	.credit{
+		margin-top: 5px;
+	}
+	.rating	{
+		margin-top: 5px;
+	}
+	.priceTitle{
+		margin-top: 0;
+	}
+	.creditTitle{
+		margin-top: 0;
+	}
+	.reviewCount	{
+		margin-top: 0;
+	}
 }

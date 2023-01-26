@@ -9,7 +9,7 @@ import Input from '@components/UI/input';
 
 import styles from './search.module.scss';
 
-interface SearchFieldProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+interface SearchFieldProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
 
 const SearchField: FC<SearchFieldProps> = ({ className, ...props }) => {
 	const router = useRouter();
@@ -20,10 +20,6 @@ const SearchField: FC<SearchFieldProps> = ({ className, ...props }) => {
 		router.push({ pathname: '/search', query: { q: searchReq } });
 	}, [searchReq]);
 
-	const handleEnterDown = (e: KeyboardEvent) => {
-		if (e.key == 'Enter') searchHandler();
-	};
-
 	return (
 		<div className={cn(styles.search, className)} {...props}>
 			<Input
@@ -31,7 +27,9 @@ const SearchField: FC<SearchFieldProps> = ({ className, ...props }) => {
 				className={styles.input}
 				value={searchReq}
 				onChange={(e) => setSearchReq(e.target.value)}
-				onKeyDown={handleEnterDown}
+				onKeyDown={(e) => {
+					if (e.key == 'Enter') searchHandler();
+				}}
 			/>
 			<Button onClick={searchHandler} className={styles.button} appearance='primary'>
 				<SearchIco />

@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  eslint: {
+	images: {
+		domains: ['courses-top.ru'],
+	},
+	reactStrictMode: true,
+	eslint: {
 		// !! WARN !!
 		// Dangerously allow production builds to successfully complete even if
 		// your project has type errors.
@@ -9,6 +12,6 @@ const nextConfig = {
 		ignoreDuringBuilds: true,
 		dirs: ['src'],
 	},
-}
+};
 
 module.exports = nextConfig;

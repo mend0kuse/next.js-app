@@ -1,11 +1,8 @@
 import cn from 'classnames';
 import AdvantagesIcon from 'src/icons/advantages';
 import { TopPageAdvantage } from 'src/interfaces/page';
-import { ProductModel } from 'src/interfaces/product';
 
 import React, { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
-
-import H from '@components/UI/HTag';
 
 import styles from './advantages.module.scss';
 
